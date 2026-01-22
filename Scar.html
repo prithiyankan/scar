@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scar Unisex Fitness Studio</title>
+  <style>
+    :root {
+      --blue: #0b1f3a;
+      --white: #ffffff;
+      --light: #f4f7fc;
+      --accent: #1e4fd8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--blue);
+    }
+
+    header {
+      background: var(--blue);
+      color: var(--white);
+      padding: 25px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(11,31,58,0.85), rgba(11,31,58,0.85)), url('gym.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 46px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 40px;
+      background: var(--white);
+      color: var(--blue);
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 70px 60px;
+      text-align: center;
+    }
+
+    section h3 {
+      font-size: 32px;
+      margin-bottom: 45px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 35px 25px;
+      border-radius: 18px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    }
+
+    .card h4 {
+      margin-bottom: 15px;
+      font-size: 22px;
+      color: var(--accent);
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    footer {
+      background: var(--blue);
+      color: var(--white);
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 15px;
+      }
+
+      .hero h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SCAR UNISEX FITNESS</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#programs">Programs</a>
+    <a href="#packages">Packages</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h2>Don't Just Dream It<br>Go Get It</h2>
+    <p>Train Hard • Stay Strong • Be Confident</p>
+    <a class="btn" href="#contact">Join Now</a>
+  </div>
+</section>
+
+<section id="programs">
+  <h3>Workout Programs</h3>
+  <div class="grid">
+    <div class="card">
+      <h4>CrossFit</h4>
+      <p>Intense full-body workouts to improve strength and endurance.</p>
+    </div>
+    <div class="card">
+      <h4>Fitness Training</h4>
+      <p>Professional sessions focused on muscle building and conditioning.</p>
+    </div>
+    <div class="card">
+      <h4>Healthy Diet</h4>
+      <p>Customized diet plans to achieve your ideal body.</p>
+    </div>
+  </div>
+</section>
+
+<section id="packages">
+  <h3>Membership Packages</h3>
+  <div class="grid">
+    <div class="card">
+      <h4>Basic Package</h4>
+      <p>1 Month</p>
+      <div class="price">₹1000</div>
+    </div>
+    <div class="card">
+      <h4>Standard Package</h4>
+      <p>4 Months</p>
+      <div class="price">₹3000</div>
+    </div>
+    <div class="card">
+      <h4>Premium Package</h4>
+      <p>6 Months</p>
+      <div class="price">₹4000</div>
+    </div>
+    <div class="card">
+      <h4>Special Offer</h4>
+      <p>12 Months</p>
+      <div class="price">₹6999</div>
+    </div>
+  </div>
+</section>
+
+<section id="bmi">
+  <h3>BMI Calculator</h3>
+  <div class="grid">
+    <div class="card">
+      <p>Check your Body Mass Index</p>
+      <br>
+      <input id="height" type="number" placeholder="Height (cm)" style="padding:12px;width:100%;margin-bottom:15px;border-radius:10px;border:1px solid #ccc;">
+      <input id="weight" type="number" placeholder="Weight (kg)" style="padding:12px;width:100%;margin-bottom:15px;border-radius:10px;border:1px solid #ccc;">
+      <button onclick="calculateBMI()" class="btn">Calculate BMI</button>
+      <p id="bmiResult" style="margin-top:20px;font-weight:bold;"></p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h3>Contact Us</h3>
+  <p>📞 9659451445</p>
+  <p>📍 Scar Unisex Fitness Studio</p>
+</section>
+
+<footer>
+  <p>© 2026 Scar Unisex Fitness Studio</p>
+</footer>
+
+<script>
+function calculateBMI() {
+  const height = document.getElementById('height').value;
+  const weight = document.getElementById('weight').value;
+  const result = document.getElementById('bmiResult');
+
+  if (!height || !weight) {
+    result.innerHTML = 'Please enter height and weight';
+    return;
+  }
+
+  const bmi = (weight / ((height / 100) ** 2)).toFixed(1);
+  let status = '';
+
+  if (bmi < 18.5) status = 'Underweight';
+  else if (bmi < 25) status = 'Normal';
+  else if (bmi < 30) status = 'Overweight';
+  else status = 'Obese';
+
+  result.innerHTML = `Your BMI: ${bmi} (${status})`;
+}
+</script>
+</body>
+</html>
